@@ -19,16 +19,20 @@ This document outlines the style, design, and features of the Flutter applicatio
 *   **Theme Toggle:** Users can switch between light, dark, and system theme modes.
 *   **State Management:** `provider` is used for managing the application's theme state.
 
-## Plan for Current Request: Implement Material Design 3
+## Plan for Current Request: Create UI from Image
 
-The user has requested to implement Material Design 3 in the project. The following steps will be taken:
+The user has requested to create a UI based on an image. The following steps will be taken:
 
-1.  **Add Dependencies:** Add the `google_fonts` and `provider` packages to `pubspec.yaml`.
-2.  **Create Theme Provider:** Create a `ThemeProvider` class to manage the application's theme state.
-3.  **Implement Theme Data:** Define light and dark `ThemeData` using `ColorScheme.fromSeed` and `google_fonts`.
-4.  **Update `main.dart`:**
-    *   Wrap the application in a `ChangeNotifierProvider` to make the `ThemeProvider` available to the widget tree.
-    *   Use a `Consumer` to rebuild the `MaterialApp` when the theme changes.
-    *   Add a `MyHomePage` with a theme toggle button in the `AppBar`.
-    *   Apply custom text styles and button themes.
-5.  **Verify Implementation:** Run the application to ensure the theme is applied correctly and the toggle functionality works as expected.
+1.  **Update Theme:** Set the default theme to dark mode to match the image's aesthetic. Modify the dark `ThemeData` to use a black background and `robotoMono` as the primary font.
+2.  **Create New UI in `MyHomePage`:**
+    *   Replace the existing content of `MyHomePage` with a new layout.
+    *   Add an `AppBar` with the title "Memorial PAF - Controle".
+    *   The body will contain three columns for "O PEDRO", "LINHA DO TEMPO", and "MULTIPLIQUE-SE".
+3.  **Create Reusable Widgets:**
+    *   `CategoryCard`: A widget to display a column with a title and two buttons.
+    *   `LanguageButton`: A styled button with a flag emoji and text ("Português" or "Inglês").
+4.  **Styling:**
+    *   Use a dark theme with a black background.
+    *   Apply borders and rounded corners to cards and buttons to match the visual design in the image.
+    *   Use the `robotoMono` font from `google_fonts` for a consistent look.
+5.  **File Updates:** Update `lib/main.dart` with the new UI code and `blueprint.md` with the plan.
